@@ -1,0 +1,8 @@
+{
+  "title": "Serenay Toptan Docs",
+  "description": "Nextra ile hazırlanmış kişisel dokümantasyon sitesi",
+  "author": "Serenay Toptan",
+  "keywords": ["nextra", "docs", "documentation", "react", "nextjs"],
+  "themeColor": "#FF0080",
+  "favicon": "/favicon.ico"
+}
