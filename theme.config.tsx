@@ -2,12 +2,13 @@ import React from 'react';
 import meta from './meta.json';
 
 const config = {
-  logo: (
-    <>
-      <img src="/vercel.svg" alt="Vercel Logo" width={24} style={{ marginRight: 8 }} />
-      <span style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>✨ Serenay Toptan Docs</span>
-    </>
-  ),
+  logo: false,
+  //(
+    //<>
+     // <img src="/logo.png" alt="Aifano " width={40} height={40} style={{ marginRight: 8 }} />
+      //<span style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>Aifano </span>
+    //</>
+ // ),
   
   project: {
     link: 'https://github.com/Serenay-Toptan/my-nextra-docs3',
