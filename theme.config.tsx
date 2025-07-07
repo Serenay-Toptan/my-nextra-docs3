@@ -1,22 +1,28 @@
-import React from 'react';
-import meta from './meta.json';
+
+import meta from './meta.json'
+
 
 const config = {
-  logo: false,
-  //(
-    //<>
-     // <img src="/logo.png" alt="Aifano " width={40} height={40} style={{ marginRight: 8 }} />
-      //<span style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>Aifano </span>
-    //</>
- // ),
-  
+  logo: '',
+
+  colors: {
+    primary: '#800080',
+    background: {
+      light: '#ffffff',
+      dark: '#000000',
+    },
+  },
+
   project: {
     link: 'https://github.com/Serenay-Toptan/my-nextra-docs3',
   },
+
   docsRepositoryBase: 'https://github.com/Serenay-Toptan/my-nextra-docs3/blob/main',
+
   footer: {
     text: `MIT ${new Date().getFullYear()} © Serenay Toptan.`,
   },
+
   banner: {
     key: 'new-release',
     text: (
@@ -25,10 +31,12 @@ const config = {
       </a>
     ),
   },
+
   navigation: {
     prev: true,
     next: true,
   },
+
   useNextSeoProps() {
     return {
       titleTemplate: `%s – ${meta.title}`,
@@ -37,9 +45,10 @@ const config = {
         title: meta.title,
         description: meta.description,
       },
-    };
+    }
   },
-  primaryHue: 330,
-};
 
-export default config;
+  primaryHue: 330,
+}
+
+export default config
