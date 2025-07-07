@@ -1,9 +1,8 @@
-
+import Logo from './components/Logo'
 import meta from './meta.json'
 
-
 const config = {
-  logo: '',
+  logo: <Logo />,   // ✨ Bizim logomuzu Nextra header'ına koy
 
   colors: {
     primary: '#800080',

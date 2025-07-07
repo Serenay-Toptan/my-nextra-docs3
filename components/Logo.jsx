@@ -10,7 +10,11 @@ export default function Logo() {
     setMounted(true)
   }, [])
 
+  // İlk mount öncesinde herhangi bir render yapma (SSR hydration hatası önlemek için)
   if (!mounted) return null
+
+  // resolvedTheme === 'system' olabilir, bunu da kontrol etmek istersen:
+  const logoSrc = resolvedTheme === 'dark' ? '/dark_mode_logo.svg' : '/light_mode_logo.svg'
 
   return (
     <>
