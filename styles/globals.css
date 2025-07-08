@@ -1,50 +1,64 @@
-
 /* styles/globals.css */
-.theme-toggle {
-  /* Diğer stiller */
-  transition: all 0.3s ease;
-}
 
-/* Logo için transition ekleyebilirsiniz */
-img {
-  transition: opacity 0.3s ease;
-}
-/* Nextra header'ını flex row yap */
+/* Header: logo ve menüyü en sola ve en sağa yasla */
 header.nextra-header {
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
+  justify-content: space-between; /* logo sola, menü sağa */
   align-items: center;
-  justify-content: space-between;
+  padding: 0 2rem; /* sağ-sol boşluk */
 }
 
-/* Logo kapsayıcısını sola sabitle */
+/* Logo kapsayıcı - tam en sola */
 header.nextra-header > div:first-child {
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
 }
 
-/* Menü kapsayıcısını sağa yasla ve yatay diz */
-header.nextra-header nav {
-  flex: 1 1 auto;
+/* Menü container - sağa yapışık */
+.custom-menu {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-/* Menü içindeki ul'yi yatay yap */
-header.nextra-header nav ul {
+/* Menü listesini yatay diz */
+.custom-menu-list {
   display: flex;
-  gap: 20px;
+  flex-direction: row;
+  gap: 20px;          /* Menü elemanları arasında boşluk */
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style: none;  /* Nokta / sayı kaldır */
 }
 
 /* Menü elemanları */
-header.nextra-header nav ul li {
+.custom-menu-list li {
   display: inline-block;
 }
-header.nextra-header > div:first-child {
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+/* Menü linkleri (isteğe bağlı: görünüm için) */
+.custom-menu-list li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
 }
+/* Menü linkleri */
+.nextra-nav-container .custom-menu ul li a {
+  color: inherit;            /* Varsayılan renk */
+  text-decoration: none;     /* Alt çizgi yok */
+  transition: color 0.3s ease; /* Yumuşak renk geçişi */
+}
+
+/* Menü linkleri hover’da mor olsun */
+.nextra-nav-container .custom-menu ul li a:hover {
+  color: #a855f7; /* Mor renk (Tailwind purple-500 tonu) */
+}
+/* Sol sidebar ve kenar çizgisini tamamen kaldır */
+.nextra-sidebar-container {
+  display: none !important;
+  width: 0 !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
