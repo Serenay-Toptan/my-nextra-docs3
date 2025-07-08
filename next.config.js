@@ -6,4 +6,5 @@ const withNextra = require('nextra')({
 module.exports = withNextra({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  
 })

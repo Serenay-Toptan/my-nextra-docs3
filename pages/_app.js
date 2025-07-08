@@ -2,9 +2,15 @@
 import React from 'react'
 import Head from 'next/head'
 import { ThemeProvider } from 'next-themes'
+import { useTheme } from 'next-themes'
+import '../styles/globals.css'
+
+
+
 
 
 export default function MyApp({ Component, pageProps }) {
+  
   return (
    <ThemeProvider attribute="class" enableSystem defaultTheme="system">
 

@@ -1,28 +1,40 @@
-// components/Logo.jsx
+'use client'
+
 import React, { useEffect, useState } from 'react'
-import { useTheme } from 'next-themes'
 
 export default function Logo() {
-  const { resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
+    const html = document.documentElement
+
+    const checkDark = () => {
+      setIsDarkMode(html.classList.contains('dark'))
+    }
+
+    checkDark()
+
+    const observer = new MutationObserver(() => {
+      checkDark()
+    })
+
+    observer.observe(html, {
+      attributes: true,
+      attributeFilter: ['class'],
+    })
+
+    return () => observer.disconnect()
   }, [])
 
-  // İlk mount öncesinde herhangi bir render yapma (SSR hydration hatası önlemek için)
-  if (!mounted) return null
-
-  // resolvedTheme === 'system' olabilir, bunu da kontrol etmek istersen:
-  const logoSrc = resolvedTheme === 'dark' ? '/dark_mode_logo.svg' : '/light_mode_logo.svg'
+  const logoSrc = isDarkMode ? '/dark_mode_logo.svg' : '/light_mode_logo.svg'
 
   return (
-    <>
-      {resolvedTheme === 'dark' ? (
-        <img src="/dark_mode_logo.svg" alt="Logo Dark" width={80} height={80} />
-      ) : (
-        <img src="/light_mode_logo.svg" alt="Logo Light" width={80} height={80} />
-      )}
-    </>
+    <img
+      src={logoSrc}
+      alt={isDarkMode ? 'Logo Dark' : 'Logo Light'}
+      width={80}
+      height={80}
+      className="transition duration-300 ease-in-out"
+    />
   )
 }

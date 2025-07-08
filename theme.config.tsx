@@ -1,16 +1,17 @@
 import Logo from './components/Logo'
 import meta from './meta.json'
 
-const config = {
-  logo: <Logo />,   // ✨ Bizim logomuzu Nextra header'ına koy
 
-  colors: {
-    primary: '#800080',
-    background: {
-      light: '#ffffff',
-      dark: '#000000',
-    },
+const config = {
+  logo: function LogoWrapper() {
+    return <Logo />;
   },
+  
+  
+  search: false, 
+  
+
+ 
 
   project: {
     link: 'https://github.com/Serenay-Toptan/my-nextra-docs3',
