@@ -21,6 +21,7 @@ const config = {
 
   footer: {
     text: `MIT ${new Date().getFullYear()} © Serenay Toptan.`,
+    
   },
 
   banner: {
@@ -65,6 +66,7 @@ const config = {
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
+      
     ),
   },
 }

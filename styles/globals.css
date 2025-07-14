@@ -1,14 +1,14 @@
 /* styles/globals.css */
 
-/* Header: logo ve menüyü en sola ve en sağa yasla */
+
 header.nextra-header {
   display: flex;
-  justify-content: space-between; /* logo sola, menü sağa */
+  justify-content: space-between; 
   align-items: center;
-  padding: 0 2rem; /* sağ-sol boşluk */
+  padding: 0 2rem; 
 }
 
-/* Logo kapsayıcı - tam en sola */
+
 header.nextra-header > div:first-child {
   flex: 0 0 auto;
   display: flex;
@@ -54,11 +54,57 @@ header.nextra-header > div:first-child {
 .nextra-nav-container .custom-menu ul li a:hover {
   color: #a855f7; /* Mor renk (Tailwind purple-500 tonu) */
 }
-/* Sol sidebar ve kenar çizgisini tamamen kaldır */
-.nextra-sidebar-container {
+
+/* Sidebar menü kısmını gizle */
+.nextra-sidebar-container nav {
   display: none !important;
-  width: 0 !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
+}
+/* Sidebar'ın tamamını temizle (sadece toggle görünsün) */
+.nextra-sidebar-container {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+/* Sidebar'daki tüm çizgi ve border'ları kaldır */
+.nextra-sidebar-container hr,
+.nextra-sidebar-container .nextra-collapse,
+.nextra-sidebar-container .nextra-collapse-items,
+.nextra-sidebar-container .nextra-scrollbar > div > div,
+.nextra-sidebar-container .nextra-sidebar-divider {
+  display: none !important;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
+/* Active (seçili) menü öğesindeki çizgiyi kaldır */
+.nextra-sidebar-container .active > a {
+  box-shadow: none !important;
+  background: none !important;
+}
+
+/* Toggle butonunu her zaman göster */
+.nextra-hamburger {
+  display: flex !important;
+  position: relative;
+  z-index: 20;
+}
+
+/* Mobile'da yatay menüyü gizle */
+@media (max-width: 768px) {
+  .custom-menu {
+    display: none;
+  }
+}
+
+/* Desktop'ta toggle'ı gizle */
+@media (min-width: 769px) {
+  .nextra-hamburger {
+    display: none !important;
+  }
+}
+/* Sidebar kalsın; toggle ve search bar görünür */
